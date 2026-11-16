@@ -1,0 +1,136 @@
+// Année bissextile 
+// Réaliser un petit algorithme qui sur base d’une année donnée va déterminer s’il s’agit
+// d’une année bissextile. 
+// Une année est bissextile 
+// si elle est divisible par 4, mais non divisible par 100. 
+// Ou si elle est divisible par 400.
+
+
+Algorithme AnBissextile
+
+variable year en Entier
+
+DEBUTntraire
+Ecrire("Entrez une année : ")
+lire(year)
+
+ est bissextile si year est divisible par 4, et year non divisible par 100. 
+// Ou si year est divisible par 400.
+
+
+SI (year % 4 = 0) ET (year % 100 != 0) ALORS
+		Ecrire("bissextile")
+    SINONSI (year % 400 = 0) ALORS
+		Ecrire("bissextile")
+	SINON
+		Ecrire("non-bissextile")
+	FINSI
+
+FIN
+
+SI ((year % 4 = 0) ET (year % 100 != 0)) OU (year % 400 = 0) ALORS
+		Ecrire("bissextile")
+	SINON
+		Ecrire("non-bissextile")
+	FINSI
+
+FIN
+
+
+
+// ------------------------------------------------
+Lanceur de balles de tennis (Pseudo-Code)
+Réaliser l’algorithme d’un lanceur de balles de tennis. 
+Ce lanceur possède deux états :
+    – prêt : permet de savoir si le tennisman est prêt. Il ne faut pas lancer de balles dans le cas co
+    – panierVide : permet de savoir s’il y a encore des balles disponibles
+Le lanceur de balle possède l’opération « lancerBalle » 
+qui vous l’aurez compris, permet de lancer une balle.
+
+Algorithme LanceurDeBalles
+
+variable pret en Booléen <- faux
+variable panierVide en Booléen <- faux
+
+
+variable stockBalles en Entier
+variable joueurEnPosition en CHAINE
+
+DEBUT 
+Ecrire("Combien de balles avez-vous mis dans la machine ? ")
+lire(stockBalles)
+
+SI stockBalles > 0 ALORS
+		panierVide <- faux
+	FINSI
+
+Ecrire("Etes vous en position ? y - n")
+lire(joueurEnPosition)
+SI joueurEnPosition = "y" ALORS
+    pret <- vrai
+	FINSI
+
+SI NON panierVide ET pret ALORS
+		Ecrire("On lance les balles")
+	FINSI
+FIN
+
+
+on récupère le nombre de balles
+si on à au moins une balle on peut définir que le panier n'est pas vide
+on demande à l'utilisateur si il est pret
+si l'utilisateur est prêt et que le panier n'est pas vide
+on lance les balles
+
+/---------------------------------------------
+
+Distributeur de boissons (Pseudo-Code)
+Réaliser l’algorithme d’un distributeur de boissons. 
+Ce dernier propose plusieurs boissons et 
+l’utilisateur choisit celle qu’il désire en entrant le numéro correspondant. 
+Ne pas oublier de vérifier s’il y a encore des boissons en stock
+
+Algorithme Distributeurs
+
+variable choice en CHAINE
+
+variable coca en Entier <- 5
+variable fanta en Entier <- 5
+variable eau en Entier <- 5
+
+DEBUT
+	Ecrire("Choisissez votre boisson :")
+    SI coca > 0 ALORS
+        Ecrire("Coca - 1")
+	FINSI
+    Ecrire("Fanta - 2")
+    Ecrire("Eau - 3")
+
+    lire(choice)
+
+    SELONQUE choice VAUT
+        "1" : SI coca > 0 ALORS
+                Ecrire("Voici votre coca")
+                coca = coca - 1 (coca -= 1)
+              SINON
+                   Ecrire("Cette boisson n'est pas disponible")
+              FINSI
+        "2" : SI fanta > 0 ALORS
+                Ecrire("Voici votre fanta")
+                fanta = fanta - 1
+              SINON
+                   Ecrire("Cette boisson n'est pas disponible")
+              FINSI
+        "3" : SI eau > 0 ALORS
+                Ecrire("Voici votre eau")
+                eau =  eau - 1
+              SINON
+                   Ecrire("Cette boisson n'est pas disponible")
+              FINSI
+
+        "default" : Ecrire("Cette boisson n'existe pas")
+FIN
+
+// ------------------------------------------------------------------
+
+

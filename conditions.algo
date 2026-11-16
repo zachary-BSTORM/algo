@@ -1,0 +1,233 @@
+
+// conditions à remplir 
+// code à éxécuter
+
+variable age en Entier = 35
+variable ageMin en Entier = 18
+
+lire(age)
+
+SI (age > 18) ALORS
+		Ecrire("Vous pouvez passer")
+	FINSI
+
+
+//----------------------
+
+result1 = 5 > 8  // false 
+
+result2 = 5 < 3 // false
+
+result = age < ageMin | 35 < 18 | false 
+result = age > ageMin | 35 > 18 | true
+
+
+// ------------------------
+opérateurs de comparaisons
+
+- égalité                 :  =
+- différence              : !=
+
+
+- plus petit que          : <
+- plus petit ou égale que : <=
+
+- plus grand que          : > 
+- plus grand ou égale que : >= 
+
+
+variable  age en Entier
+variable nom  en CHAINE
+
+SI age > 18  ALORS
+		Ecrire("L'age est supérieur à 18")
+	FINSI
+
+SI age < 18  ALORS
+		Ecrire("L'age est inférieur à 18")
+	FINSI
+
+SI nom = "bob" ALORS
+		Ecrire("Vous êtes bob")
+	FINSI
+
+
+// ---------------------------------------------
+
+variable a en Entier <- 5
+variable b en Entier <- 4
+
+variable nom en CHAINE <- "bob"
+
+
+// ET : demande que toutes les valeurs renvoie vrai
+SI a > b ET nom = "bob" ALORS
+//(true) ET (true)
+       (true)
+		Ecrire()
+	FINSI
+
+// demande au minimum une seule valeur vrai
+SI a < b OU nom = "bob" ALORS
+(false)  OU (true)
+    (true)
+		Ecrire()
+	FINSI
+
+
+// inversion NON va inverser la valeur ou conditions:  NON(VRAI) = FAUX
+variable isAdmin en Booléen <- false
+
+SI NOT isAdmin ALORS
+    // inversion de la conditions ( si le booléen est à false)
+    isAdmin = false | conditions ( si isAdmin = false)
+		Ecrire()
+	FINSI
+
+
+
+
+// XOR : ou exclusif valide uniquement si une seule condition renvoie vrai 
+SI true XOR true  ALORS
+		Ecrire()
+	FINSI
+
+// -----------------------------------
+
+variable nbPlaces en Entier <- 10
+variable nbPassager en Entier <- 12
+variable carburant en Entier <- 50
+variable consomationPrevu en Entier <- 80 
+
+
+SI NON ((nbPlaces > 9) ET (nbPassager < 10)) OU (carburant < consomationPrevu)  ALORS
+		Ecrire("le code s'execute")
+	FINSI
+
+
+result = true ET false // false
+result = true OU false // true
+result = NON (true ET false) // true
+
+//-------------------------------------
+// différentes possibilités :
+ - Soit toutes les conditions sont lié et seront regroupé
+variable age en Entier = 35
+variable ageMin en Entier = 18
+
+lire(age)
+
+// ici les conditions ne sont vérifié que si la première est refusé0
+SI (age > 18) ALORS
+		Ecrire("Vous pouvez passer")
+	SINONSI age < 15 ALORS
+		Ecrire("Vous avez 15ans")
+	SINON
+		Ecrire("Vous avez entre 15 et 18ans")
+	FINSI
+
+- Chaque vérification est indépendante 
+// chaque vérification est faites dans tout les cas
+si (age > 18) alors
+		Ecrire("Vous pouvez passer")
+	finsi
+
+si age < 15 alors
+    Ecrire("Vous avez 15ans")
+finsi
+
+si age < 18 ET age > 15 alors
+    Ecrire("Vous avez entre 15 et 18ans")
+finsi
+
+// ---------------------------------------------
+SI ... ALORS ... FINSI
+
+variable age en Entier = 35
+
+lire(age)
+
+// ici les conditions ne sont vérifié que si la première est refusé0
+SI (age > 18) ALORS
+		Ecrire("Vous pouvez passer")
+	FINSI
+
+
+// ------------------------------------------------------
+// SI ... SINON
+
+variable age en Entier = 35
+variable ageMin en Entier = 18
+
+lire(age)
+
+// ici les conditions ne sont vérifié que si la première est refusé0
+SI (age > 18) ALORS
+        // cas si vrai
+		Ecrire("Vous pouvez passer")
+	SINON
+        // cas si faux
+		Ecrire("Vous ne pouvez pas passer")
+	FINSI
+
+    // ------------------------------------------------------
+// SI ... SINONSI ... SINON ...
+
+variable age en Entier = 35
+variable ageMin en Entier = 18
+
+lire(age)
+
+// ici les conditions ne sont vérifié que si la première est refusé0
+SI (age < 18) ET( b < c) ALORS
+		Ecrire("Vous ne pouvez pas passer")
+	SINONSI (age > 120) ALORS
+		Ecrire("Vous êtes un peu vieux")
+	SINON
+		Ecrire("Vous pouvez passer")
+	FINSI
+
+// ------------------------------------
+
+variable jour en Entier
+
+SI jour = 0 ALORS
+		Ecrire("Nous sommes lundi")
+	SINONSI jour = 1 ALORS
+		Ecrire("Nous sommes mardi")
+        	SINONSI jour = 2 ALORS
+		        Ecrire("Nous sommes mercredi")
+        	        SINONSI jour = 3 ALORS
+		                Ecrire("Nous sommes jeudi")
+	                        SINON
+                                Ecrire("Jour non pris en charge")
+	FINSI
+
+
+SELONQUE jour VAUT
+    1 : Ecrire("lundi")
+    2 : Ecrire("mardi")
+    3 : Ecrire("mercredi")
+    4 : Ecrire("jeudi")
+    default : Ecrire("inconnu")
+FINSQ
+
+//-------------------------------------
+
+variable operator en CHAINE
+
+lire(operator)
+
+
+SELONQUE operator VAUT
+    "+" : Ecrire(a + b)
+    "-" : Ecrire(a - b)
+    "*" : Ecrire(a * b)
+    "/" : Ecrire(a / b)
+ FINSQ
+
+ SI operator = "+" ALORS
+		code_ici
+	SINONSI operator = "-" ALORS
+		code_ici
+	FINSI

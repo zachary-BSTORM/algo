@@ -1,0 +1,216 @@
+// Déclarations
+variable nom en CHAINE
+
+
+// Affectation
+nom <- "bob"
+
+nom <- "john"
+
+
+// renvoie le résultat attendu
+renvoie nom
+Ecrire(nom)
+
+// -----------------------------------------------
+
+// Inversion de deux variables
+
+//      nom   type   valeur
+variable nb1 en Entier <- 5 
+variable nb2 en Entier <- 4
+
+variable temp en Entier
+
+DEBUT
+	code_ici
+// inversion des deux variables
+
+// temp = 5 | nb1 = 5
+temp <- nb1 
+
+// nb1 = 4 | temp = 5 | nb2 = 4
+nb1 <- nb2    
+
+// nb1 = 4 | temp = 5 | nb2 = 5
+nb2 <- temp 
+
+
+Ecrire(a) // 4
+Ecrire(b) // 5
+
+FIN
+
+// -----------------------------------------------------------
+
+// ENTIER 
+ variable number en Entier <- 5
+
+// Réel 
+ variable decimal en Réel <- 5.5
+
+ // Booléen
+ variable bool en Booléen <- true  |0 1
+
+  // CHAINE
+ variable texte en CHAINE <- "Bob"
+
+// -----------------------------------------------------------
+// une variable peu changer de valeur pendant l'execution
+
+// CONSTANTE
+// une constante ne peu pas être modifié pendant l'execution
+CONSTANTE PI en Réel <- 3.14
+
+// -----------------------------------------------------------
+
+// lowerCamelCase
+
+maSuperVariable <- 5
+
+
+// -----------------------------------------------------------
+
+Algorithme addition
+// déclarations
+variables nb1,nb2 en Entier
+variable operator en CHAINE
+
+DEBUT
+// execution logique
+	Ecrire("Entrez la première valeur")
+    nb1 <- lire()
+
+    Ecrire("Entrez l'opérateur")
+    lire(operator)
+
+    Ecrire("Entrez la deuxième valeur")
+    lire(nb2)
+
+// resultat attendu
+    Ecrire(nb1 + nb2)
+
+
+FIN
+
+// ---------------------------------------------------
+
+// Déclarations
+variable maVariable en Entier
+
+// Affectation
+maVariable <- 5 
+
+// Comparaison
+maVariable = 5 
+
+
+// ----------------------------------------
+
+variable a en Entier // 5
+variable b en Entier // 4
+
+DEBUT
+	a <- a + b 
+    // a = 9
+    // b = 4
+
+    b <- a - b
+    // b = 5
+    // a = 9
+
+    a <- a - b
+    // a = 4
+    // b = 5
+
+    Ecrire(a) 
+    Ecrire(b) 
+FIN
+
+// ---------------------------------
+
+// Lire et Ecrire
+
+nom <- lire() // "bob"
+prenom <- lire() // "doe"
+age <- lire() // 35
+
+Ecrire(nom + " " + prenom + + " " age) "bob doe 35"
+
+
+Ecrire("Vous aurez bientot " + age + 1) //"Vous aurez bientot 351"
+
+ // opérateurs
+
+nb1 <- 5
+nb2 <- 5
+
+ + - * /
+result <- nb1 + nb1   // 10
+result <- nb1 - nb1   // 0
+result <- nb1 * nb1   // 25
+result <- nb1 / nb1   // 1
+
+
+ // DIV -  % MOD
+
+ 
+
+ a <- 5
+ b <- 2
+
+ result <- a DIV b // resultat de la division entière: 2
+ result <- a MOD b  // reste de la division entière   : 1
+
+ // -------------------------------------------
+
+ Variable A, B, C, D, E : Entier
+DEBUT
+	
+    A ← 8 MOD 3                     // 2
+    B ← 4 + A                       // 6
+    C ← B * A                       // 12
+    D ← (C – A) * B                 // 60
+    E ← ((A + 7) * (D DIV A)) * 0   // 0
+        ( (9)  ) * ( 30 ) * 0
+Fin
+
+
+// ----------------------------------------
+
+Algorithme ConvertisseurSecondes
+
+// heure   : 3600
+// jour    : 86400
+
+variable secondesInput en Entier // 60
+
+variable jours , heures , minutes , secondes en Entier
+
+
+DEBUT
+	// code à implémenter
+
+    lire(secondesInput) // 10000
+
+
+    secondes <- secondesInput MOD 60 
+
+    minutes <- secondesInput DIV 60 
+
+
+    heures <- minutes DIV 60  
+    minutes <- minutes MOD 60 
+
+
+    jours  < - heures DIV 24 
+    heure <- heures MOD 24 
+
+
+    Ecrire(secondesInput + "s Donne " + 
+            jours + "j " + 
+            heures + "h " + 
+            minutes + "m " +  
+            secondes + "s" )  
+        //    4561 s donne 0 j 1h 16m 1s
+FIN
