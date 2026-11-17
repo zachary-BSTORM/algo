@@ -52,3 +52,49 @@ TANTQUE i < TAILLE FAIRE
         i = i + 1
 	FINTANTQUE
 
+// ---------------------------------------
+
+Écrire un algorithme qui saisit 6 entiers 
+et les stocke dans un tableau, 
+puis affiche le contenu de ce tableau une fois qu’il est rempli.
+
+Tableau tab[6] en Entier
+
+variable i en Entier <- 0
+variable input en Entier
+
+TANTQUE i < 6 FAIRE
+		Ecrire("Entrez une valeur")
+        lire(input)
+
+        tab[i] <- input
+        i = i + 1
+	FINTANTQUE
+
+i <- 0
+TANTQUE i < 6 FAIRE
+		Ecrire(tab[i])
+        i = i + 1
+	FINTANTQUE
+
+// --------------------------------
+
+Tableau tab[10] en Entier
+
+variable i en Entier <- 1
+variable value en Entier <- 2
+
+
+TANTQUE  i < 10 FAIRE
+		tab[i] <- value * 2
+
+        i = i + 1
+        value = value * 2
+	FINTANTQUE
+
+i <- 0
+TANTQUE i < 10 FAIRE
+		Ecrire(tab[i])
+
+        i = i + 1
+	FINTANTQUE 
