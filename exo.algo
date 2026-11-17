@@ -10,7 +10,7 @@ Algorithme AnBissextile
 
 variable year en Entier
 
-DEBUTntraire
+DEBUT 
 Ecrire("Entrez une année : ")
 lire(year)
 
@@ -28,6 +28,7 @@ SI (year % 4 = 0) ET (year % 100 != 0) ALORS
 
 FIN
 
+DEBUT 
 SI ((year % 4 = 0) ET (year % 100 != 0)) OU (year % 400 = 0) ALORS
 		Ecrire("bissextile")
 	SINON
@@ -72,6 +73,8 @@ SI joueurEnPosition = "y" ALORS
 
 SI NON panierVide ET pret ALORS
 		Ecrire("On lance les balles")
+        SINON 
+            Ecrire("Prévenez nous quand vous êtes prêt !")
 	FINSI
 FIN
 
@@ -134,3 +137,348 @@ FIN
 // ------------------------------------------------------------------
 
 
+// Calculatrice
+
+Algorithme Calculatrice
+
+// déclaration
+variable nb1 , nb2 , resultat en Entier
+variable operator en CHAINE
+
+DEBUT
+// récupération
+Ecrire("Entrez le premier nombre :")
+lire(nb1)
+
+Ecrire("Entrez un opérateur ( + - * / ) :")
+lire(operator)
+
+Ecrire("Entrez le deuxième nombre :")
+lire(nb2)
+
+// execution
+SELONQUE operator VAUT
+"+" : resultat <- nb1 + nb2
+"-" : resultat <- nb1 - nb2
+"*" : resultat <- nb1 * nb2
+"/" : Si nb2 != 0 Alors
+		resultat <- nb1 / nb2
+        Sinon
+            Ecrire("La division par zero n'est pas possible")
+
+
+// Resultat attendu
+Ecrire("Le resultat de " + nb1 + operator + nb2 + " = " resultat)
+
+FIN
+
+// ---------------------------------------------------
+Convertisseur 
+Réalisez un algorithme utilisant le convertisseur de secondes, 
+il reçoit deux durées (jours, heures, minutes et secondes) 
+et calcule la différence entre ces dernières.
+
+variable jours1,heures1,minutes1,secondes1 en Entier
+variable jours2,heures2,minutes2,secondes2 en Entier
+
+variable dureeSecondes1 en Entier
+variable dureeSecondes2 en Entier
+
+variable diffSecondes en Entier
+
+variable resteSecondes en Entier
+
+variable diffJours,diffHeures,diffMinutes,diffSecondes2 en Entier
+
+DEBUT
+	// récupération des valeurs--------------------------------
+    Ecrire("Entrez la valeur en jours pour la première durée")
+    lire(jours1)
+
+    Ecrire("Entrez la valeur en heures pour la première durée")
+    lire(heures1)
+
+    Ecrire("Entrez la valeur en minutes pour la première durée")
+    lire(minutes1)
+
+    Ecrire("Entrez la valeur en secondes pour la première durée")
+    lire(secondes1)
+
+
+
+    Ecrire("Entrez la valeur en jours pour la deuxième durée")
+    lire(jours2)
+
+    Ecrire("Entrez la valeur en heures pour la deuxième durée")
+    lire(heures2)
+
+    Ecrire("Entrez la valeur en minutes pour la deuxième durée")
+    lire(minutes2)
+
+    Ecrire("Entrez la valeur en secondes pour la deuxième durée")
+    lire(secondes2)
+
+
+    // Execution de la logique
+
+    // conversion dans une valeur commune --------------------------------
+    dureeSecondes1 <- (jours1 * 86400) + (heures1 * 3600) + (minutes1 * 60) + secondes1
+    dureeSecondes2 <- (jours2 * 86400) + (heures2 * 3600) + (minutes2 * 60) + secondes2
+
+    // vérification de la plus grande valeur--------------------------------
+    Si dureeSecondes1 >= dureeSecondes2 Alors
+		diffSecondes <- dureeSecondes1 - dureeSecondes2
+	Sinon
+		diffSecondes <- dureeSecondes2 - dureeSecondes1
+	FinSi
+
+// récupération des valeurs du résultat --------------------------------
+
+    diffJours <- diffSecondes DIV 86400
+    resteSecondes <- diffSecondes MOD 86400
+
+    diffHeures <- resteSecondes DIV 3600
+    resteSecondes resteSecondes MOD 3600
+
+    diffMinutes <- resteSecondes DIV 60
+
+    diffSecondes <- resteSecondes MOD 60
+
+
+    // resultat attendu--------------------------------
+    Ecrire("La différence est de " + diffJours + "j " + diffHeures + "h " + diffMinutes + "m " + diffSecondes + "s")
+
+FIN
+
+// ---------------------------------------------------
+
+"Gestion d'un menu utilisateur :
+- pour chaque action on affiche un message 
+- le menu contient : 
+                    - afficher la liste des utilisateurs ( rien à récupérer )
+                    - afficher un utilisateur par son id ( récupérer l'id et l'afficher)
+                    - modifier un utilisateur ( récupérer id , email , password)
+                    - supprimer un utilisateur ( récupérer l'id )"
+
+
+variable choice en Entier
+variable id en Entier
+variable email en CHAINE
+variable password en CHAINE
+
+Ecrire("Menu")
+Ecrire("Afficher la liste - 1")
+Ecrire("Afficher un utilisateur - 2")
+Ecrire("Modifier un utilisateur - 3")
+Ecrire("Supprimer un utilisateur - 4")
+
+Ecrire("Faites votre choix :")
+lire(choice)
+
+SELONQUE choice VAUT
+1 : Ecrire("Affichage de la liste")
+
+2 : 
+    Ecrire("Entrez l'id de l'utilisateur à afficher")
+    lire(id)
+    Ecrire("Voici le détail de l'utilisateur " + id)
+
+3 : 
+    Ecrire("Entrez l'id de l'utilisateur à modifier")
+    lire(id)
+    Ecrire("Entrez le nouvel email")
+    lire(email)
+    Ecrire("Entrez le nouveau mot de passe")
+    lire(password)
+
+    Ecrire("L'utilisateur " + id + "à bien été modifié")
+
+4 : 
+    Ecrire("Entrez l'id de l'utilisateur à modifier")
+    lire(id)
+    Ecrire("L'utilisateur " + id + " à bien été supprimé")
+
+// ------------------------------------------------------------------
+
+variable i en Entier <- 0
+
+
+TANTQUE i < 10 FAIRE
+		Ecrire(i)
+        i = i + 1
+	FINTANTQUE
+
+// -------------------------------------------
+
+variable isCorrect en Booléen <- faux
+variable email en CHAINE
+
+TANTQUE  NON(isCorrect) FAIRE
+		Ecrire("Entrez votre email")
+        lire(email)
+
+        si email contient "@" alors
+		    isCorrect <- vrai
+	    finsi
+FINTANTQUE
+
+
+// -------------------------------------------
+variable isCorrect en Booléen <- faux
+variable email en CHAINE
+
+FAIRE 
+Ecrire("Entrez votre email")
+        lire(email)
+
+        si email contient "@" alors
+		    isCorrect <- vrai
+	    finsi
+
+TANTQUE NON(isCorrect)
+
+
+
+
+// ----------------------------------------
+
+variable age en Entier
+
+FAIRE 
+    Ecrire("Entrez votre age :")
+    lire(age)
+
+TANTQUE age < 18
+
+
+variable age en Entier <- 0
+
+TANTQUE age < 18 FAIRE
+	Ecrire("Entrez votre age :")
+    lire(age)
+FINTANTQUE
+
+
+variable isCorrect en Booléen
+
+
+TANTQUE NON(isCorrect) FAIRE
+		Ecrire("Entrez votre age :")
+        lire(age)
+
+        Ecrire("Entrez votre role :")
+        lire(role)
+
+
+        Si age > 18 ET role = "admin" Alors
+		    isCorrect <- vrai
+	    FinSi
+	FINTANTQUE
+
+    // ------------------------------------------------
+
+    // jeu du plus ou moins 
+    // on travaille avec un nombreMystère aléatoire (random())
+    // demandez à l utilisateur une valeur 
+    // indiquer si la valeur est plus petite ou plus grande que le nombreMystère
+
+
+  Algorithme JeuDuNombreMystère
+
+    variable mysteryNumber en Entier <- random(1 , 100) // 50
+    variable inputUser en Entier
+
+
+    DEBUT
+
+        FAIRE
+            FAIRE
+                Ecrire("Entrez une valeur entre 1 et 100")
+                lire(inputUser) // 25
+            TANTQUE inputUser < 1 OU inputUser > 100
+
+            Si nombreMystère < inputUser Alors
+                Ecrire("La valeur est plus petite")
+            SinonSi nombreMystère > inputUser Alors
+                Ecrire("La valeur est plus grande")
+            Sinon
+                Ecrire("Bravo vous avez trouvé le nombre mystère")
+            FinSi
+
+        TANTQUE inputUser != nombreMystère
+
+	
+    FIN  
+
+// -------------------------------
+
+variable mystery en Entier
+variable inputUser en Entier
+variable win en Booléen <- faux
+
+
+DEBUT
+
+    TANTQUE NON(win) FAIRE
+		FAIRE
+            Ecrire("Entrez une valeur entre 1 et 100")
+            lire(inputUser) // 25
+        TANTQUE inputUser < 1 OU inputUser > 100
+        
+        Si nombreMystère < inputUser Alors
+            Ecrire("La valeur est plus petite")
+            SinonSi nombreMystère > inputUser Alors
+                Ecrire("La valeur est plus grande")
+                Sinon
+                    Ecrire("Bravo vous avez trouvé le nombre mystère")
+                    win <- vrai
+        FinSi
+
+
+	FINTANTQUE
+
+    Ecrire("Merci à bientot")
+
+FIN
+
+// ---------------------------------------------------------
+À l’aide d’une boucle, afficher la table de multiplication par 2.
+Ensuite, tester votre algorithme avec Flowgorithm.
+
+
+Algorithme TableDe2
+
+variable compteur en Entier
+
+compteur <- 1
+
+TANTQUE compteur < 11 FAIRE
+		Ecrire(compteur + " * 2 = " + (compteur * 2) )
+        compteur = compteur + 1
+	FINTANTQUE
+
+    FAIRE 
+        Ecrire(compteur + " * 2 = " + (compteur * 2) )
+        compteur = compteur + 1
+    TANTQUE compteur < 11
+
+
+
+// ---------------------------------------------------------
+À l’aide de deux boucles, afficher les tables de multiplication
+de 1 à 9. Ensuite, tester votre algorithme avec Flowgorithm.
+
+variable i , j en Entier
+
+i <- 1
+
+TANTQUE i < 11 FAIRE 
+		
+        j <- 1   
+        TANTQUE  j < 11 FAIRE
+		    Ecrire(i + " * " + j + " = " + (i * j)) * 1 = 2 // i = 2 | j = 1
+            j = j + 1
+	    FINTANTQUE
+
+        i = i + 1 
+FINTANTQUE

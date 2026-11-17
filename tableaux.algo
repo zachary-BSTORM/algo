@@ -1,0 +1,54 @@
+// Sans tableau
+
+variable a,b,c,d en CHAINE
+
+
+a <- "hello"
+b <- "hello"
+c <- "hello"
+d <- "hello"
+
+
+a <- ["hello"]
+
+// ----------------------------
+Tableau tab[5] en CHAINE
+
+// les valeurs dans le tableau sont accessible par leur indice [n]
+["hello","holla","Salam","HI" , "moshi"]
+[   0   ,   1   ,   2   ,   3  , 4     ]
+de  0          jusqu a    taille - 1
+
+// récupération 
+tab[0] renvoie "hello"
+tab[2] renvoie "Salam"
+
+// affecter
+tab[0] <- "nouvelle valeur"
+
+
+// --------------------------------------------
+
+CONSTANTE TAILLE de ENTIER <- 100000
+Tableau Scores[TAILLE] en Entier
+
+variable i en Entier
+
+i <- 0
+
+TANTQUE  i < TAILLE FAIRE
+
+		Ecrire("Entrez une valeur pour l'emplacement " + i)
+        tab[i] <- lire()
+        i = i + 1
+
+	FINTANTQUE
+
+i <- 0
+TANTQUE i < TAILLE FAIRE
+
+		Ecrire(tab[i]) tab[4]
+
+        i = i + 1
+	FINTANTQUE
+
